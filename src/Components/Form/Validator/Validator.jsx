@@ -19,11 +19,15 @@ const validations = {
     },
 }
 
+function executeValidations(title) {
+    Object.keys(validations).forEach((key) => {
+        validations[key](title);
+    });
+}
+
 export default function validate(title) {
     try {
-        validations.checkEmpty(title);
-        validations.checkMinLength(title);
-        validations.checkMaxLength(title);
+        executeValidations(title)
         toast.success('Tarefa adicionada!', {
             position: "top-right",
             autoClose: 3000,
