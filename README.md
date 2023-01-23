@@ -1,5 +1,5 @@
 <h1>Introdução</h1>
-<p>O projeto "todolist-redux" é uma aplicação de lista de tarefas feita com React e Redux. Ele permite que os usuários adicionem tarefas, excluam-nas e concluam-nas, com persistência de dados que ficam salvos no localStorage. Ele utiliza as bibliotecas Redux, react-icons, sass, reactJs e a integração com o VITE. </p>
+<p>O projeto "todolist-redux" é uma aplicação de lista de tarefas desenvolvida com React e Redux, permitindo que os usuários adicionem, excluam e concluam tarefas, com persistência de dados armazenados no localStorage. Ele utiliza as bibliotecas Redux, react-icons e SASS, além de integração com o VITE, que permite rodar o React e SASS juntos.</p>
 <h1>Apresentação visual</h1>
 <img src="https://raw.githubusercontent.com/frontRocha/todolist-redux/master/apresenta%C3%A7%C3%A3o.PNG" alt="Ilustração"/>
 <h1>Recursos</h1>
