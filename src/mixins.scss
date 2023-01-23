@@ -1,0 +1,40 @@
+@use './variables.scss';
+
+@mixin flex-col {
+    display: variables.$dipFlex;
+    justify-content: variables.$content-center;
+    align-items: variables.$content-center;
+    flex-direction: variables.$flexCol;
+}
+
+@mixin flex-col-no-justify {
+    display: variables.$dipFlex;
+    align-items: variables.$content-center;
+    flex-direction: variables.$flexCol;   
+}
+
+@mixin flex-between {
+    display: variables.$dipFlex;
+    justify-content: variables.$between;
+    align-items: variables.$content-center;
+}
+
+@mixin flex-center {
+    display: variables.$dipFlex;
+    align-items: variables.$content-center;
+    justify-content: variables.$content-center;
+}
+
+
+//medias
+@mixin tablet {
+    @media (max-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin phone {
+    @media (max-width: 600px) {
+        @content;
+    }
+}

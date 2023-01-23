@@ -1,0 +1,63 @@
+@use '../..//mixins.scss';
+@use '../../variables.scss';
+
+.task {
+    width: variables.$full - 10%;
+    @include mixins.flex-between;
+    font-family: variables.$fontPrimary;
+    color: variables.$colorText;
+    padding: variables.$measurements * 2.10 variables.$measurements;
+    background-color: rgba(0, 0, 0, 0.24);
+    border: 1px solid variables.$colorPrimary;
+    border-radius: variables.$measurements;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.267);
+
+    @include mixins.phone {
+        gap: variables.$measurements + .25rem;
+        flex-direction: variables.$flexCol;
+    }
+
+    .completed {
+        text-decoration: line-through;
+        color: rgb(110, 110, 110);
+    }
+
+    .options {
+        display: variables.$dipFlex;
+        gap: variables.$measurements;
+
+        .complet {
+            @include mixins.flex-center;
+            padding: variables.$measurements - .40rem;
+            font-size: variables.$measurements + .25rem;
+            color: variables.$colorPrimary;
+            background-color: variables.$bgTransparent;
+            border: 1px solid variables.$colorPrimary;
+            border-radius: variables.$measurements - .20rem;
+            cursor: pointer;
+            transition-duration: .2s;
+        }
+
+        .completed {
+            color: variables.$colorText;
+            background-color: variables.$colorPrimary;
+            border: 1px solid variables.$colorPrimary;
+        }
+
+        .delete {
+            @include mixins.flex-center;
+            padding: variables.$measurements - .40rem;
+            font-size: variables.$measurements + .25rem;
+            color: variables.$colorPrimary;
+            background-color: variables.$bgTransparent;
+            border: 1px solid variables.$colorPrimary;
+            border-radius: variables.$measurements - .20rem;
+            cursor: pointer;
+            transition-duration: .2s;
+        }
+    }
+}
+
+.completed {
+    opacity: .5;
+}

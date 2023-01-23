@@ -1,0 +1,1 @@
+export const setTodos = state => state.todo

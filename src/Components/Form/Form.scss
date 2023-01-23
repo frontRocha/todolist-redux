@@ -1,0 +1,70 @@
+@use '../../mixins.scss';
+@use '../../variables.scss';
+
+form {
+    margin: variables.$measurements * 3 0;
+    display: variables.$dipFlex;
+    justify-content: variables.$content-center;
+    gap: variables.$measurements * 2;
+    width: variables.$full;
+
+    @include mixins.phone {
+        flex-direction: variables.$col;
+        gap: variables.$measurements - .80rem;
+    }
+
+    input {
+        width: variables.$full;
+        background-image: linear-gradient(90deg, rgb(37, 37, 37) 0%, rgb(49, 38, 82) 100%);
+        border: 1px solid variables.$colorPrimary;
+        border-radius: 9px;
+        padding: 0.84rem 1.25rem;
+        border-radius: variables.$measurements - .10;
+        border: 1px solid variables.$colorPrimary;
+        font-size: variables.$measurements + .10;
+        font-family: variables.$fontPrimary;
+        font-weight: 500;
+        color: variables.$colorText;
+
+        @include mixins.tablet {
+            font-size: variables.$measurements;
+        }
+
+        @include mixins.phone {
+            width: auto;
+        }
+
+        &:focus {
+            outline: none;
+        }
+
+        &::placeholder {
+            color: #949494;
+        }
+    }
+
+    button {
+        @include mixins.flex-center;
+        gap: variables.$measurements - .20;
+        padding: variables.$measurements - .10 variables.$measurements * 3;
+        background-color: variables.$colorPrimary;
+        color: variables.$colorText;
+        border-radius: variables.$measurements - .20;
+        border: 1px solid variables.$colorPrimary;
+        font-family: variables.$fontPrimary;
+        font-size: variables.$measurements;
+        transition-duration: .3s;
+
+        @include mixins.tablet {
+            font-size: variables.$measurements - .20;
+            padding: variables.$measurements - .10  variables.$measurements * 2 + .50;
+        }
+
+        &:hover {
+            background: variables.$bgTransparent;
+            border: 1px solid variables.$colorPrimary;
+            color: variables.$colorPrimary;
+            cursor: pointer;
+        }
+    }
+}

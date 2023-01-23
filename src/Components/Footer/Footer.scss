@@ -1,0 +1,46 @@
+@use '../../variables.scss';
+@use '../../mixins.scss';
+
+footer {
+    width: variables.$full;
+    background-image: variables.$colorBlack;
+    padding: variables.$measurements * 2 0;
+    font-family: variables.$fontPrimary;
+
+    .content-footer {
+        width: variables.$full;
+        text-align: variables.$text-align;
+
+        .nets {
+            @include mixins.flex-center;
+            gap: variables.$measurements * 2;
+
+            .method {
+                width: variables.$measurements * 2;
+                height: variables.$measurements * 2;
+                @include mixins.flex-center;
+                background-color: variables.$colorPrimary;
+                padding: variables.$measurements - .50;
+                font-size: variables.$measurements * 2;
+                border-radius: variables.$full - 50%;
+                cursor: pointer;
+                transition-duration: .3s;
+                border: 1px solid variables.$colorPrimary;
+
+                &:hover {
+                    background-color: variables.$colorBlack;
+                }
+
+                a {
+                    margin-top: 6px;
+                    color: variables.$colorText;
+                }
+            }
+        }
+
+        p {
+            padding-top: variables.$measurements;
+            color: variables.$colorText;
+        }
+    }
+}

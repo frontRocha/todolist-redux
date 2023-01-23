@@ -1,0 +1,41 @@
+@use './mixins.scss';
+@use './variables.scss';
+
+#section {
+    background-image: linear-gradient(180deg, #141318 0.81%, #1C182C 50.41%, #231C40 100%);
+    min-height: variables.$full-vh;
+    width: variables.$full;
+    padding: variables.$measurements 0 0 0;
+
+    .content {
+        max-width: 1400px;
+        margin: variables.$margin-auto;
+        padding: variables.$measurements * 2 variables.$measurements * 3;
+        @include mixins.flex-col;
+        text-align: variables.$text-align;
+        font-family: variables.$fontPrimary;
+
+        .title {
+            color: variables.$colorText;
+
+            h1 {
+                font-weight: 200;
+                font-size: variables.$measurements * 3;
+
+                @include mixins.phone {
+                    font-size: variables.$measurements * 2;
+                }
+            }
+
+            img {
+                position: variables.$relative;
+                top: -10px;
+                width: 220px;
+
+                @include mixins.phone {
+                    width: 200px;
+                }
+            }
+        }
+    }
+}
