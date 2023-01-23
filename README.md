@@ -37,7 +37,6 @@
 <ol>
   <li>Fork o repositório</li>
   <li>Crie uma nova branch com a sua feature</li>
-  <li>Faça um pull request para o repositório original</li>
 </ol>
 <h1>Link do projeto</h1>
 <p>https://todolist-redux-react.vercel.app/</p>
