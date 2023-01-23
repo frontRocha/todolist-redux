@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { AiOutlinePlus } from "react-icons/Ai"
+import { AiOutlinePlus } from "react-icons/ai"
 import { useDispatch } from "react-redux"
 import { v4 } from "uuid"
 import { ToastContainer } from 'react-toastify';
