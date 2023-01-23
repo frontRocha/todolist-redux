@@ -2,7 +2,7 @@ import { Form } from './Components/Form/Form'
 import { Todo } from './Components/Todo/Todo'
 import { Footer } from './Components/Footer/Footer'
 
-import logoredux from './assets/redux-logo.png'
+import logoredux from './Assets/redux-logo.png'
 
 import './App.scss'
 
