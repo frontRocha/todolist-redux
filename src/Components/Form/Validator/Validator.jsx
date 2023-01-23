@@ -1,9 +1,30 @@
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function Validator(title) {
-    if (!title) {
-        toast.error('Verifique os campos', {
+const validations = {
+    checkEmpty: (title) => {
+        if (!title) {
+            throw new Error('Digite algo no campo!')
+        }
+    },
+    checkMinLength: (title) => {
+        if (title.length < 4) {
+            throw new Error('Digite algo válido')
+        }
+    },
+    checkMaxLength: (title) => {
+        if (title.length > 30) {
+            throw new Error('Limite de caracteres atingido')
+        }
+    },
+}
+
+export default function validate(title) {
+    try {
+        validations.checkEmpty(title);
+        validations.checkMinLength(title);
+        validations.checkMaxLength(title);
+        toast.success('Tarefa adicionada!', {
             position: "top-right",
             autoClose: 3000,
             hideProgressBar: false,
@@ -14,11 +35,9 @@ export default function Validator(title) {
             theme: "dark",
         });
 
-        throw new Error('empty field')
-    }
-
-    if (title.length < 4) {
-        toast.error('Adicione uma tarefa válida', {
+        return
+    } catch (err) {
+        toast.error(err.message, {
             position: "top-right",
             autoClose: 3000,
             hideProgressBar: false,
@@ -29,32 +48,6 @@ export default function Validator(title) {
             theme: "dark",
         });
 
-        throw new Error('invalid field')
+        return err
     }
-
-    if (title.length > 30) {
-        toast.error('Limite de caracteres', {
-            position: "top-right",
-            autoClose: 3000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-        });
-
-        throw new Error('character limit')
-    }
-
-    toast.success('Tarefa adicionada!', {
-        position: "top-right",
-        autoClose: 3000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-    });
 }

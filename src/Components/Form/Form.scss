@@ -10,7 +10,7 @@ form {
 
     @include mixins.phone {
         flex-direction: variables.$col;
-        gap: variables.$measurements - .80rem;
+        gap: variables.$measurements - .10;
     }
 
     input {

@@ -14,18 +14,16 @@ export function Form() {
     const [titleTask, setTitleTask] = useState('')
     const dispatch = useDispatch()
 
-    const handleCreateTaskOnTodoList = (e) => {
+    const handleDataTask = async (e) => {
         e.preventDefault()
-
-        try {
-            Validator(titleTask)
-            createTaskOnTodoList()
-        } catch (err){
-            return err
+        const result = await Validator(titleTask)
+        
+        if(!result) {
+            createTaskData()
         }
     }
 
-    const createTaskOnTodoList = () => {
+    const createTaskData = () => {
         const id = v4()
         const task = {
             name: titleTask,
@@ -45,7 +43,7 @@ export function Form() {
         <form className="form">
             <ToastContainer />
             <input placeholder='Adicione uma tarefa aqui' value={titleTask} onChange={(e) => setTitleTask(e.target.value)} />
-            <button onClick={handleCreateTaskOnTodoList}><AiOutlinePlus /> Adicionar</button>
+            <button onClick={handleDataTask}><AiOutlinePlus /> Adicionar</button>
         </form>
     )
 }

@@ -1,3 +1,4 @@
+import { useEffect } from "react"
 import { useDispatch, useSelector } from "react-redux"
 import { MdDownloadDone } from "react-icons/md"
 import { HiOutlineTrash } from "react-icons/hi"
@@ -11,6 +12,10 @@ export function Task() {
 
     const todoList = useSelector(setTodos)
     const dispatch = useDispatch()
+
+    useEffect(() => {
+        localStorage.setItem('@todoList:tasks', JSON.stringify(todoList))
+    }, [todoList])
 
     const toggleCompletedTask = (id) => {
         dispatch(toggleCompleteTask(id))
