@@ -28,7 +28,7 @@ export function Task() {
     return (
         todoList.map((item) => (
             <div key={item.id} className={`${item.checked && "completed"} task`}>
-                <h1 className={item.checked && "completed"}>{item.name[0].toUpperCase() + item.name.substring(1)}</h1>
+                <h1 className={`${item.checked && "completed"} `}>{item.name[0].toUpperCase() + item.name.substring(1)}</h1>
                 <div className="options">
                     <button className={`${item.checked ? "completed" : ""} complet`} onClick={() => toggleCompletedTask(item.id)}><MdDownloadDone /></button>
                     <button className="delete" onClick={() => removeTaskOfTodo(item.id)}><HiOutlineTrash /></button>
