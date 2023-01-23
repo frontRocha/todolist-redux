@@ -1,4 +1,4 @@
-import { AiFillGithub, AiFillLinkedin, AiOutlineWhatsApp } from 'react-icons/Ai'
+import { AiFillGithub, AiFillLinkedin, AiOutlineWhatsApp } from 'react-icons/ai'
 import './Footer.scss'
 
 export function Footer() {
